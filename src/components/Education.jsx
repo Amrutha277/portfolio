@@ -6,7 +6,7 @@ const educationData = [
     institution: "University at Buffalo, SUNY",
     degree: "Master of Science in Computer Science",
     duration: "Jan 2024 - May 2025",
-    gpa: "GPA: 3.9/4.0",
+    gpa: "GPA: 4.0/4.0",
     courses: [
       "Machine Learning",
       "Distributed Systems",
