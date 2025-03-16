@@ -11,7 +11,6 @@ const educationData = [
       "Machine Learning",
       "Distributed Systems",
       "Database Systems",
-      "Cloud Computing",
       "Analysis of Algorithms",
       "Computer Architecture",
       "Modern Networking Concepts"
