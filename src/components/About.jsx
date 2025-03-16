@@ -5,7 +5,7 @@ import "./About.css"; // Import the CSS file for About section
 const About = () => {
   return (
     <div className="about-container">
-      <h2>A little deeper</h2>
+      <h2>A little deeper-</h2>
       <p>
         I am <strong>Amrutha Varshini Ramireddy</strong>, a results-driven Software
         Engineer with a passion for building scalable, high-performance systems and
