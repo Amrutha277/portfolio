@@ -1,27 +1,76 @@
-/* src/styles/About.css */
 .about-container {
     width: 100%;
     max-width: 1000px; /* match your other sections' max width if any */
     margin: 0 auto;    /* center horizontally */
-    padding: 60px 8%;/* space around content */
-    text-align: center;/* center text, optional */
+    padding: 60px 8%;  /* space around content */
     box-sizing: border-box;
+    /* Remove text-align: center so everything is left-aligned by default */
   }
   
-  /* If you want a heading style matching other sections */
+  /* Headings and paragraphs left-aligned by default */
+  .about-container h2,
+  .about-container h3,
+  .about-container p,
+  .about-container ul {
+    text-align: left;
+  }
+  
+  /* Main heading (e.g., "A little deeper" or "About Me") */
   .about-container h2 {
     font-size: 2rem;
-    margin-bottom: 10px;
-    text-align: left;
-    
+    margin-bottom: 1rem;
   }
   
-  /* Paragraph style */
+  /* Subheading (e.g., "What I Bring to the Table") */
+  .about-container h3 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Paragraphs */
   .about-container p {
     font-size: 1.1rem;
     line-height: 1.6;
-    max-width: 700px;   /* narrower text block for better readability */
-    margin: 0 auto;     /* center text block */
-    text-align: left;
+    margin-bottom: 1rem; /* spacing after paragraphs */
+    max-width: 700px;    /* narrower text block for better readability */
+  }
+  
+  /* "What I Bring to the Table" special styling */
+  .table-list {
+    background-color: #f9f9f9;  /* Subtle background */
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Bulleted list styling */
+  .table-list ul {
+    list-style: none;    /* remove default bullets */
+    padding: 0;          /* remove default list padding */
+    margin: 0;           /* remove default list margin */
+  }
+  
+  .table-list li {
+    position: relative;
+    margin-bottom: 0.75rem; /* space between items */
+    padding-left: 1.5rem;   /* space to make room for custom bullet */
+    line-height: 1.5;
+  }
+  
+  /* Custom bullet symbol (colored dot) */
+  .table-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #0077b5;      /* or any accent color you prefer */
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+  
+  /* Optional: highlight the bold text inside bullet points */
+  .table-list li strong {
+    color: #213547;      /* or your preferred accent color */
   }
   
