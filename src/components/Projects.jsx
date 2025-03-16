@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import "./Projects.css";
 
-// Minimal array of projects (title, details, tech, duration optional)
 const projectsData = [
   {
     title: "Raft Leader Election Protocol Implementation",
@@ -10,7 +9,7 @@ const projectsData = [
       "Developed the leader election phase of the Raft consensus protocol for a fault-tolerant key/value storage system.",
       "Implemented randomized election timeouts and RequestVote RPCs to elect a leader in a distributed system.",
       "Designed heartbeat mechanisms using AppendEntries RPCs to ensure leadership stability and reset election timeouts.",
-      "Achieved fault tolerance with automatic recovery and re-election of a leader after network partitions or server crashes.   Validated the implementation against provided test cases, passing scenarios for initial elections and re-elections post-failures."
+      "Achieved fault tolerance with automatic recovery and re-election of a leader after network partitions or server crashes. Validated the implementation against provided test cases, passing scenarios for initial elections and re-elections post-failures."
     ],
     tech: "GoLang"
   },
@@ -18,17 +17,17 @@ const projectsData = [
     title: "Chandy-Lamport Distributed Snapshot Algorithm",
     details: [
       "Implemented a fault-tolerant distributed snapshot algorithm for token-passing systems based on the Chandy-Lamport protocol.",
-      "Designed a simulation framework to test snapshot consistency in distributed systems, ensuring accurate recording of process and channel states. ",
-      " Integrated marker message propagation and token management with FIFO communication channels to achieve system-wide consistent snapshots. ",
+      "Designed a simulation framework to test snapshot consistency in distributed systems, ensuring accurate recording of process and channel states.",
+      "Integrated marker message propagation and token management with FIFO communication channels to achieve system-wide consistent snapshots."
     ],
     tech: "GoLang"
   },
   {
     title: "Sign Language Recognition",
     details: [
-      "Engineered a deep learning model to translate American Sign Language into text with 92% accuracy, utilizing TensorFlow for training and OpenCV for real-time image processing",
-      "Leveraged TensorFlow for model training and OpenCV for real-time image processing, providing enhanced accessibility solutions for individuals with hearing impairments. ",
-      "Overcame variations in hand shapes and lighting by applying data augmentation (e.g., rotation, brightness adjustments) and adaptive thresholding in preprocessing, ensuring consistent detection. "
+      "Engineered a deep learning model to translate American Sign Language into text with 92% accuracy, utilizing TensorFlow for training and OpenCV for real-time image processing.",
+      "Leveraged TensorFlow for model training and OpenCV for real-time image processing, providing enhanced accessibility solutions.",
+      "Applied data augmentation and adaptive thresholding to overcome variations in hand shapes and lighting, ensuring consistent detection."
     ],
     tech: "Python | TensorFlow | OpenCV"
   },
@@ -43,19 +42,19 @@ const projectsData = [
   {
     title: "Scheduling, system calls on PintOS",
     details: [
-      "Implemented Multi threading, synchronization and system call management in Stanford's PINTOS framework enhancing the operating system's scheduling functionality.  ",
-      "Resolved race conditions in shared memory access using mutex locks and thread-safe queueing mechanisms, ensuring reliable multithreaded operations  "
+      "Implemented multi-threading, synchronization, and system call management in Stanford's PINTOS framework to enhance OS scheduling functionality.",
+      "Resolved race conditions in shared memory access using mutex locks and thread-safe queues, ensuring reliable operations."
     ],
-    tech: "C++ | multithreading | memory management"
+    tech: "C++ | Multithreading | Memory Management"
   },
   {
-    title: "Multi client - server text chat application",
+    title: "Multi client-server text chat application",
     details: [
-      "Developed a secure, multi-client text-based chat application over TCP/IP for reliable communication. The application featured real-time broadcasting, as well as blocking and unblocking functionalities, implemented via socket programming.",
-      "The solution demonstrated reliable performance for up to 50 simultaneous clients, suitable for enterprise-level communication. ",
-      "Enhanced concurrency management through epoll-based I/O multiplexing for enterprise use."
+      "Developed a secure, multi-client text-based chat application over TCP/IP with real-time broadcasting.",
+      "Implemented blocking/unblocking functionalities and ensured reliable communication using socket programming.",
+      "Enhanced concurrency using epoll-based I/O multiplexing to support up to 50 simultaneous clients."
     ],
-    tech: "C++ | multithreading | memory management"
+    tech: "C++ | Multithreading | Sockets"
   },
   {
     title: "Raft Leader Election Protocol",
@@ -68,45 +67,49 @@ const projectsData = [
 ];
 
 const Projects = () => {
-  // Track which project index is expanded (or null if none)
-  const [expandedIndex, setExpandedIndex] = useState(null);
+  // State to track which project's details are open in the modal (null if none)
+  const [modalProjectIndex, setModalProjectIndex] = useState(null);
 
-  const toggleDetails = (index) => {
-    setExpandedIndex(expandedIndex === index ? null : index);
+  const openModal = (index) => {
+    setModalProjectIndex(index);
+  };
+
+  const closeModal = () => {
+    setModalProjectIndex(null);
   };
 
   return (
     <div className="projects-container">
-      <h2>Acadamic Projects</h2>
+      <h2>Academic Projects</h2>
       <div className="projects-grid">
-        {projectsData.map((proj, index) => {
-          const isExpanded = expandedIndex === index;
-          return (
-            <div key={index} className="project-card">
-              <h4>{proj.title}</h4>
-              {/* Show duration if available */}
-              {proj.duration && <p className="duration">{proj.duration}</p>}
-
-              {/* Tech stack always visible */}
-              <p className="tech-stack">{proj.tech}</p>
-
-              {/* Button to toggle details */}
-              <button className="details-btn" onClick={() => toggleDetails(index)}>
-                {isExpanded ? "Hide Details" : "View Details"}
-              </button>
-
-              {/* Conditionally show details if expanded */}
-              {isExpanded && (
-                <ul className="project-details">
-                  {proj.details.map((detail, idx) => (
-                    <li key={idx}>{detail}</li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          );
-        })}
+        {projectsData.map((proj, index) => (
+          <div key={index} className="project-card">
+            <h4>{proj.title}</h4>
+            {/* Show tech stack */}
+            <p className="tech-stack">{proj.tech}</p>
+            {/* Button to open modal pop-up */}
+            <button className="details-btn" onClick={() => openModal(index)}>
+              View Details
+            </button>
+          </div>
+        ))}
       </div>
+
+      {/* Modal Pop-Up */}
+      {modalProjectIndex !== null && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={closeModal}>×</button>
+            <h4>{projectsData[modalProjectIndex].title}</h4>
+            <p className="tech-stack">{projectsData[modalProjectIndex].tech}</p>
+            <ul className="project-details">
+              {projectsData[modalProjectIndex].details.map((detail, idx) => (
+                <li key={idx}>{detail}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
