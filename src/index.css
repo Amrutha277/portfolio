@@ -167,6 +167,48 @@ body {
   line-height: 1.6;
 }
 
+/* Resume Link Styling */
+/* Resume Button Styling */
+.resume-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3a3a3a;
+  color: #fff;
+  padding: 0.5rem 0.75rem; /* Adjusted padding */
+  border-radius: 5px; /* Slight rounding for consistency */
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+  font-size: 1rem; /* Match icon size */
+  height: 0.5rem; /* Same as social icons */
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* Adjust button hover effect */
+.resume-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Align social icons and resume button */
+.social-links {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem; /* Adjust spacing */
+  margin-top: 2.8125rem; /* 45px */
+  justify-content: center;
+}
+
+/* Ensure text inside the button is properly aligned */
+.resume-btn span {
+  margin-left: 5px;
+}
+
+
+
+
 /* Social Links */
 .social-links {
   display: flex;

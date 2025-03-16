@@ -29,7 +29,7 @@ const Home = () => (
           Let's connect and build something great together!
         </p>
 
-        {/* Social Links Below the Text */}
+        {/* Social Links & Resume Button */}
         <div className="social-links">
           <a
             href="https://www.linkedin.com/in/amrutha-varshini-ramireddy-906034328/"
@@ -48,13 +48,23 @@ const Home = () => (
           >
             <FontAwesomeIcon icon={faGithub} className="social-icon" />
           </a>
+
+          {/* Resume Button */}
+          <a 
+            href="https://docs.google.com/document/d/1r6NEfToX0vnFI8zThdLhFgbw68CwMKOar6KhovE_9ZM/edit?tab=t.0" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="resume-btn"
+          >
+            View Resume
+          </a>
         </div>
       </div>
     </div>
 
     {/* Scrollable Sections Below */}
     <div className="scrollable-sections">
-      <About></About>
+      <About />
       <Skills />
       <Education />
       <Projects />

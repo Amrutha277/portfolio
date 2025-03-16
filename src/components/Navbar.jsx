@@ -10,12 +10,21 @@ const Navbar = () => {
     <nav className="navbar">
       {/* Navigation Links */}
       <ul className={isMobile ? "nav-links-mobile" : "nav-links"}>
-        {/* <li><NavLink to="/" onClick={() => setIsMobile(false)}>Hello!</NavLink></li> */}
         <li><NavLink to="/home" onClick={() => setIsMobile(false)}>Hello!</NavLink></li>
         <li><NavLink to="/about" onClick={() => setIsMobile(false)}>About</NavLink></li>
         <li><NavLink to="/skills" onClick={() => setIsMobile(false)}>Skills</NavLink></li>
         <li><NavLink to="/education" onClick={() => setIsMobile(false)}>Education</NavLink></li>
         <li><NavLink to="/projects" onClick={() => setIsMobile(false)}>Projects</NavLink></li>
+        {/* Download Resume Link */}
+        <li>
+          <a 
+            href="/Resume.pdf" 
+            download="Amrutha_Varshini_Resume.pdf"
+            className="resume-link"
+          >
+            Resume
+          </a>
+        </li>
       </ul>
 
       {/* Hamburger Icon - Moved to Right */}

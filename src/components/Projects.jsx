@@ -25,7 +25,7 @@ const projectsData = [
   {
     title: "Sign Language Recognition",
     details: [
-      "Engineered a deep learning model to translate American Sign Language into text with 92% accuracy, utilizing TensorFlow for training and OpenCV for real-time image processing.",
+      "Engineered a deep learning model to translate American Sign Language into text with 92% accuracy.",
       "Leveraged TensorFlow for model training and OpenCV for real-time image processing, providing enhanced accessibility solutions.",
       "Applied data augmentation and adaptive thresholding to overcome variations in hand shapes and lighting, ensuring consistent detection."
     ],
