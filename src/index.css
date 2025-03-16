@@ -146,6 +146,9 @@ body {
   object-fit: cover;
   object-position: center 20%;
   border: 0.25rem solid #333; /* 4px -> 0.25rem */
+  transform: scale(1.1);
+  /* Optional: ensure it stays centered in its container */
+  margin: 0 auto;
 }
 
 .home-text {
