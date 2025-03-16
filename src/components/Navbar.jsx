@@ -17,13 +17,13 @@ const Navbar = () => {
         <li><NavLink to="/projects" onClick={() => setIsMobile(false)}>Projects</NavLink></li>
         {/* Download Resume Link */}
         <li>
-          <a 
+          {/* <a 
             href="/Resume.pdf" 
             download="Amrutha_Varshini_Resume.pdf"
             className="resume-link"
           >
             Resume
-          </a>
+          </a> */}
         </li>
       </ul>
 
