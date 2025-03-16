@@ -25,8 +25,8 @@ const Home = () => (
       <div className="home-text">
         <h1>Amrutha Varshini Ramireddy</h1>
         <p>
-          I'm a Software Engineer driven by innovation, problem-solving, and the
-          pursuit of building impactful, high-performance applications.
+          I am passionate about building impactful software, optimizing complex systems, and constantly learning and experimenting with new technologies. Whether it's database optimization, high-concurrency systems, or AI-driven solutions, I enjoy solving challenging problems and delivering high-quality software.
+          Let's connect and build something great together!
         </p>
 
         {/* Social Links Below the Text */}
