@@ -1,0 +1,86 @@
+/* Projects Container */
+.projects-container {
+    max-width: 800px;
+    margin: 40px auto;
+    font-family: Arial, sans-serif;
+}
+
+/* Category Header */
+.category {
+    font-size: 22px;
+    font-weight: bold;
+    color: #007bff;
+    cursor: pointer;
+    margin: 15px 0;
+    padding: 10px;
+    border-bottom: 2px solid #007bff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+/* Tech Stack under Category */
+.category-tech {
+    font-size: 14px;
+    color: #666;
+    margin-left: 10px;
+}
+
+/* Expand/Collapse Icons */
+.category span {
+    transition: transform 0.3s ease;
+}
+
+.category.open span {
+    transform: rotate(180deg);
+}
+
+/* Project Details (Initially Hidden) */
+.projects-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+/* Show Details when Active */
+.projects-list.active {
+    max-height: 500px; /* Adjust based on content */
+}
+
+/* Project Card */
+.project-card {
+    background: #f9f9f9;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+/* Project Title */
+.project-card h4 {
+    color: #c4323f;
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+/* Project Date */
+.project-card .duration {
+    font-style: italic;
+    color: #777;
+    font-size: 12px;
+}
+
+/* Project Bullet Points */
+.project-card ul {
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+/* Tech Stack */
+.project-card .tech-stack {
+    color: #555;
+    margin-top: 5px;
+    font-size: 12px;
+}
