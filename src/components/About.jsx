@@ -24,37 +24,39 @@ const About = () => {
       </p>
 
       <h3>What I Bring to the Table</h3>
-      <ul>
-        <li>
-          <strong>Ownership &amp; Leadership</strong> – I take full responsibility for
-          feature development, from design feedback, implementation, testing, and launch.
-        </li>
-        <li>
-          <strong>Scalability &amp; Performance</strong> – I focus on designing highly
-          scalable backend services and optimized frontend applications, ensuring
-          efficient performance.
-        </li>
-        <li>
-          <strong>Full-Stack Expertise</strong> – From backend microservices to frontend
-          UI development, I have hands-on experience in architecting and implementing
-          robust solutions.
-        </li>
-        <li>
-          <strong>Machine Learning &amp; AI Applications</strong> – I have worked on
-          ML-driven solutions, including credit default prediction models and sign
-          language recognition using deep learning.
-        </li>
-        <li>
-          <strong>Distributed Systems &amp; Consensus Protocols</strong> – I have
-          implemented Raft Leader Election, Chandy-Lamport Distributed Snapshot Algorithm,
-          and optimized fault-tolerant systems.
-        </li>
-        <li>
-          <strong>DevOps &amp; Cloud</strong> – I ensure seamless deployments with CI/CD
-          pipelines, Docker, Kubernetes, and AWS, reducing downtime and improving system
-          resilience.
-        </li>
-      </ul>
+      <div className="table-list">
+        <ul>
+          <li>
+            <strong>Ownership &amp; Leadership</strong> – I take full responsibility for
+            feature development, from design feedback, implementation, testing, and launch.
+          </li>
+          <li>
+            <strong>Scalability &amp; Performance</strong> – I focus on designing highly
+            scalable backend services and optimized frontend applications, ensuring
+            efficient performance.
+          </li>
+          <li>
+            <strong>Full-Stack Expertise</strong> – From backend microservices to frontend
+            UI development, I have hands-on experience in architecting and implementing
+            robust solutions.
+          </li>
+          <li>
+            <strong>Machine Learning &amp; AI Applications</strong> – I have worked on
+            ML-driven solutions, including credit default prediction models and sign
+            language recognition using deep learning.
+          </li>
+          <li>
+            <strong>Distributed Systems &amp; Consensus Protocols</strong> – I have
+            implemented Raft Leader Election, Chandy-Lamport Distributed Snapshot Algorithm,
+            and optimized fault-tolerant systems.
+          </li>
+          <li>
+            <strong>DevOps &amp; Cloud</strong> – I ensure seamless deployments with CI/CD
+            pipelines, Docker, Kubernetes, and AWS, reducing downtime and improving system
+            resilience.
+          </li>
+        </ul>
+      </div>
 
       <h3>My Journey So Far</h3>
       <p>

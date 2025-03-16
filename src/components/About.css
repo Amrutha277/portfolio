@@ -1,13 +1,13 @@
+/* src/styles/About.css */
 .about-container {
     width: 100%;
     max-width: 1000px; /* match your other sections' max width if any */
     margin: 0 auto;    /* center horizontally */
-    padding: 60px 8%;  /* space around content */
+    padding: 60px 15%; /* updated horizontal padding to 15% for better alignment */
     box-sizing: border-box;
-    /* Remove text-align: center so everything is left-aligned by default */
   }
   
-  /* Headings and paragraphs left-aligned by default */
+  /* Left-align all text elements */
   .about-container h2,
   .about-container h3,
   .about-container p,
@@ -15,62 +15,62 @@
     text-align: left;
   }
   
-  /* Main heading (e.g., "A little deeper" or "About Me") */
+  /* Main heading */
   .about-container h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
   }
   
-  /* Subheading (e.g., "What I Bring to the Table") */
+  /* Subheading */
   .about-container h3 {
     font-size: 1.5rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
   }
   
-  /* Paragraphs */
+  /* Paragraph styling */
   .about-container p {
     font-size: 1.1rem;
     line-height: 1.6;
-    margin-bottom: 1rem; /* spacing after paragraphs */
-    max-width: 700px;    /* narrower text block for better readability */
+    margin-bottom: 1rem;
+    max-width: 700px; /* narrower text block for readability */
   }
   
-  /* "What I Bring to the Table" special styling */
+  /* "What I Bring to the Table" styling */
   .table-list {
-    background-color: #f9f9f9;  /* Subtle background */
+    background-color: #f9f9f9; /* subtle background */
     padding: 1.5rem;
     border-radius: 8px;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
   }
   
-  /* Bulleted list styling */
+  /* Remove default list styling */
   .table-list ul {
-    list-style: none;    /* remove default bullets */
-    padding: 0;          /* remove default list padding */
-    margin: 0;           /* remove default list margin */
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
   
   .table-list li {
     position: relative;
     margin-bottom: 0.75rem; /* space between items */
-    padding-left: 1.5rem;   /* space to make room for custom bullet */
+    padding-left: 1.5rem;   /* space for custom bullet */
     line-height: 1.5;
   }
   
-  /* Custom bullet symbol (colored dot) */
+  /* Custom bullet symbol */
   .table-list li::before {
     content: "•";
     position: absolute;
     left: 0;
-    color: #0077b5;      /* or any accent color you prefer */
+    color: #0077b5;  /* accent color */
     font-size: 1.25rem;
     line-height: 1.5;
   }
   
-  /* Optional: highlight the bold text inside bullet points */
+  /* Optional: highlight bold text */
   .table-list li strong {
-    color: #213547;      /* or your preferred accent color */
+    color: #213547;
   }
   
