@@ -35,7 +35,8 @@
     transition: transform 0.3s;
     display: flex;
     flex-direction: column;
-  }
+    height: 100%; /* Ensures equal height for all project cards */
+}
   
   .project-card:hover {
     transform: translateY(-5px);
@@ -66,14 +67,14 @@
   /* Details Button */
   .details-btn {
     background-color: #a0c9f5;
-    color:#213547;
+    color: #213547;
     font-size: 0.875rem;
     padding: 0.5rem 0.75rem;
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    align-self: flex-start;
-    margin-bottom: 0.5rem;
+    align-self: center; /* Centers button horizontally */
+    margin-top: auto; /* Pushes button to the bottom */
     transition: background-color 0.2s ease;
   }
   
@@ -99,7 +100,9 @@
     align-items: center;
     z-index: 2000;
   }
-  
+  .project-content {
+    flex-grow: 1; /* Expands to fill space, pushing button down */
+  }
   /* Modal Content */
   .modal-content {
     background: #fff;

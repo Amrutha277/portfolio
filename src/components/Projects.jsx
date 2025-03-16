@@ -84,14 +84,14 @@ const Projects = () => {
       <div className="projects-grid">
         {projectsData.map((proj, index) => (
           <div key={index} className="project-card">
-            <h4>{proj.title}</h4>
-            {/* Show tech stack */}
-            <p className="tech-stack">{proj.tech}</p>
-            {/* Button to open modal pop-up */}
+            <div className="project-content">
+              <h4>{proj.title}</h4>
+              <p className="tech-stack">{proj.tech}</p>
+            </div>
             <button className="details-btn" onClick={() => openModal(index)}>
               View Details
             </button>
-          </div>
+          </div>        
         ))}
       </div>
 
