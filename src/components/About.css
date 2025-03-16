@@ -1,0 +1,27 @@
+/* src/styles/About.css */
+.about-container {
+    width: 100%;
+    max-width: 1000px; /* match your other sections' max width if any */
+    margin: 0 auto;    /* center horizontally */
+    padding: 60px 8%;/* space around content */
+    text-align: center;/* center text, optional */
+    box-sizing: border-box;
+  }
+  
+  /* If you want a heading style matching other sections */
+  .about-container h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: left;
+    
+  }
+  
+  /* Paragraph style */
+  .about-container p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 700px;   /* narrower text block for better readability */
+    margin: 0 auto;     /* center text block */
+    text-align: left;
+  }
+  

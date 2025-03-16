@@ -3,6 +3,7 @@ import profile from "../assets/profile.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import About from "../components/About";
 import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import Education from "../components/Education";
@@ -20,7 +21,7 @@ const Home = () => (
         <img src={profile} alt="Profile" className="profile-pic" />
       </div>
 
-      {/* Center - Name, Description, and Skills */}
+      {/* Right - Text and Social Links */}
       <div className="home-text">
         <h1>Amrutha Varshini Ramireddy</h1>
         <p>
@@ -28,31 +29,32 @@ const Home = () => (
           pursuit of building impactful, high-performance applications.
         </p>
 
-        {/* Skills Section (Plain Text, Horizontal, Dark Blue) */}
-        {/* <p className="skills-text">
-          <strong>Languages:</strong> Python | Java | C++ <br />
-          <strong>Frameworks:</strong> React | Node.js | Express.js <br />
-          <strong>Technologies:</strong> Machine Learning | Databases | Distributed Systems
-        </p> */}
-      </div>
-
-      {/* Right - Social Links */}
-      <div className="social-links">
-        <a href="https://www.linkedin.com/in/amrutha-varshini-ramireddy-906034328/" 
-           target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={faLinkedin} className="social-icon" />
-        </a>
-        <a href="mailto:aramired@buffalo.edu">
-          <FontAwesomeIcon icon={faEnvelope} className="social-icon" />
-        </a>
-        <a href="https://github.com/Amrutha277" target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={faGithub} className="social-icon" />
-        </a>
+        {/* Social Links Below the Text */}
+        <div className="social-links">
+          <a
+            href="https://www.linkedin.com/in/amrutha-varshini-ramireddy-906034328/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faLinkedin} className="social-icon" />
+          </a>
+          <a href="mailto:aramired@buffalo.edu">
+            <FontAwesomeIcon icon={faEnvelope} className="social-icon" />
+          </a>
+          <a
+            href="https://github.com/Amrutha277"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faGithub} className="social-icon" />
+          </a>
+        </div>
       </div>
     </div>
 
     {/* Scrollable Sections Below */}
     <div className="scrollable-sections">
+      <About></About>
       <Skills />
       <Education />
       <Projects />
