@@ -1,97 +1,112 @@
+// src/components/Projects.js
 import React, { useState } from "react";
 import "./Projects.css";
 
-const categories = [
-  { name: "Dev", tech: "React | Node.js | Redux | Firebase" },
-  { name: "AI & ML", tech: "Python | TensorFlow | OpenCV | Reinforcement Learning" },
-  { name: "Data Engineering", tech: "SQL | MongoDB | Redis | PostgreSQL" },
-  { name: "Distributed Systems", tech: "Go | Raft | Sockets | Threads" },
+// Minimal array of projects (title, details, tech, duration optional)
+const projectsData = [
+  {
+    title: "Raft Leader Election Protocol Implementation",
+    details: [
+      "Developed the leader election phase of the Raft consensus protocol for a fault-tolerant key/value storage system.",
+      "Implemented randomized election timeouts and RequestVote RPCs to elect a leader in a distributed system.",
+      "Designed heartbeat mechanisms using AppendEntries RPCs to ensure leadership stability and reset election timeouts.",
+      "Achieved fault tolerance with automatic recovery and re-election of a leader after network partitions or server crashes.   Validated the implementation against provided test cases, passing scenarios for initial elections and re-elections post-failures."
+    ],
+    tech: "GoLang"
+  },
+  {
+    title: "Chandy-Lamport Distributed Snapshot Algorithm",
+    details: [
+      "Implemented a fault-tolerant distributed snapshot algorithm for token-passing systems based on the Chandy-Lamport protocol.",
+      "Designed a simulation framework to test snapshot consistency in distributed systems, ensuring accurate recording of process and channel states. ",
+      " Integrated marker message propagation and token management with FIFO communication channels to achieve system-wide consistent snapshots. ",
+    ],
+    tech: "GoLang"
+  },
+  {
+    title: "Sign Language Recognition",
+    details: [
+      "Engineered a deep learning model to translate American Sign Language into text with 92% accuracy, utilizing TensorFlow for training and OpenCV for real-time image processing",
+      "Leveraged TensorFlow for model training and OpenCV for real-time image processing, providing enhanced accessibility solutions for individuals with hearing impairments. ",
+      "Overcame variations in hand shapes and lighting by applying data augmentation (e.g., rotation, brightness adjustments) and adaptive thresholding in preprocessing, ensuring consistent detection. "
+    ],
+    tech: "Python | TensorFlow | OpenCV"
+  },
+  {
+    title: "Treasure Hunt RL Grid Optimization",
+    details: [
+      "Designed RL Grid Environment using SARSA, Q Learning, and N-Step Double Q Learning.",
+      "Applied advanced reward shaping and exploration strategies to improve policy convergence."
+    ],
+    tech: "Python | TensorFlow | Reinforcement Learning"
+  },
+  {
+    title: "Scheduling, system calls on PintOS",
+    details: [
+      "Implemented Multi threading, synchronization and system call management in Stanford's PINTOS framework enhancing the operating system's scheduling functionality.  ",
+      "Resolved race conditions in shared memory access using mutex locks and thread-safe queueing mechanisms, ensuring reliable multithreaded operations  "
+    ],
+    tech: "C++ | multithreading | memory management"
+  },
+  {
+    title: "Multi client - server text chat application",
+    details: [
+      "Developed a secure, multi-client text-based chat application over TCP/IP for reliable communication. The application featured real-time broadcasting, as well as blocking and unblocking functionalities, implemented via socket programming.",
+      "The solution demonstrated reliable performance for up to 50 simultaneous clients, suitable for enterprise-level communication. ",
+      "Enhanced concurrency management through epoll-based I/O multiplexing for enterprise use."
+    ],
+    tech: "C++ | multithreading | memory management"
+  },
+  {
+    title: "Raft Leader Election Protocol",
+    details: [
+      "Implemented the Raft consensus algorithm for leader election.",
+      "Simulated fault tolerance scenarios and election delays."
+    ],
+    tech: "Go | Raft | Distributed Systems"
+  }
 ];
 
-const projects = {
-  "Dev": [
-    {
-      title: "Web-based Recommender System",
-      duration: "Jan 2022 - May 2022",
-      details: [
-        "Developed a recommendation engine that predicts user preferences for e-commerce.",
-        "Implemented using Node.js & React, integrated Firebase for real-time data."
-      ],
-      tech: "React | Node.js | Firebase"
-    }
-  ],
-  "AI & ML": [
-    {
-      title: "Sign Language Recognition",
-      duration: "May 2023 - Aug 2023",
-      details: [
-        "Developed a model to recognize sign language gestures.",
-        "Trained a CNN-based model using TensorFlow & OpenCV."
-      ],
-      tech: "Python | TensorFlow | OpenCV"
-    }
-  ],
-  "Data Engineering": [
-    {
-      title: "High-Performance Key-Value Store",
-      duration: "Oct 2022 - Dec 2022",
-      details: [
-        "Implemented a multi-threaded key-value store optimized for in-memory operations.",
-        "Utilized Redis for caching, MongoDB for persistent storage."
-      ],
-      tech: "SQL | MongoDB | Redis"
-    }
-  ],
-  "Distributed Systems": [
-    {
-      title: "Raft Leader Election Protocol",
-      duration: "Oct 2023 - Jan 2024",
-      details: [
-        "Implemented Raft consensus algorithm for leader election.",
-        "Simulated fault tolerance scenarios and election delays."
-      ],
-      tech: "Go | Raft | Distributed Systems"
-    }
-  ]
-};
-
 const Projects = () => {
-  const [activeCategory, setActiveCategory] = useState(null);
+  // Track which project index is expanded (or null if none)
+  const [expandedIndex, setExpandedIndex] = useState(null);
 
-  const toggleCategory = (category) => {
-    setActiveCategory(activeCategory === category ? null : category);
+  const toggleDetails = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
   };
 
   return (
     <div className="projects-container">
-      <h2> </h2>
+      <h2>Acadamic Projects</h2>
+      <div className="projects-grid">
+        {projectsData.map((proj, index) => {
+          const isExpanded = expandedIndex === index;
+          return (
+            <div key={index} className="project-card">
+              <h4>{proj.title}</h4>
+              {/* Show duration if available */}
+              {proj.duration && <p className="duration">{proj.duration}</p>}
 
-      {/* Categories */}
-      {categories.map((cat) => (
-        <div key={cat.name}>
-          <div className={`category ${activeCategory === cat.name ? "open" : ""}`} onClick={() => toggleCategory(cat.name)}>
-            {cat.name}
-            <span>{activeCategory === cat.name ? "▲" : "▼"}</span>
-          </div>
-          <p className="category-tech">{cat.tech}</p>
+              {/* Tech stack always visible */}
+              <p className="tech-stack">{proj.tech}</p>
 
-          {/* Project List */}
-          <div className={`projects-list ${activeCategory === cat.name ? "active" : ""}`}>
-            {projects[cat.name]?.map((proj, index) => (
-              <div key={index} className="project-card">
-                <h4>{proj.title}</h4>
-                <p className="duration">{proj.duration}</p>
-                <ul>
+              {/* Button to toggle details */}
+              <button className="details-btn" onClick={() => toggleDetails(index)}>
+                {isExpanded ? "Hide Details" : "View Details"}
+              </button>
+
+              {/* Conditionally show details if expanded */}
+              {isExpanded && (
+                <ul className="project-details">
                   {proj.details.map((detail, idx) => (
                     <li key={idx}>{detail}</li>
                   ))}
                 </ul>
-                <p className="tech-stack">{proj.tech}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      ))}
+              )}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
