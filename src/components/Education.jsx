@@ -6,14 +6,15 @@ const educationData = [
     institution: "University at Buffalo, SUNY",
     degree: "Master of Science in Computer Science",
     duration: "Jan 2024 - May 2025",
-    gpa: "GPA: 4.0/4.0",
+    GPA: "GPA: 4.0/4.0",
     courses: [
-      "Machine Learning",
+      "Operating Systems",
       "Distributed Systems",
-      "Database Systems",
+      "Database Management Systems",
       "Analysis of Algorithms",
       "Computer Architecture",
-      "Modern Networking Concepts"
+      "Modern Networking Concepts",
+      "Machine Learning"
     ],
   },
   {
@@ -23,7 +24,6 @@ const educationData = [
     courses: [
       "Operating Systems",
       "Computer Networks",
-      "Artificial Intelligence",
       "Data Structures & Algorithms",
       "Compiler Design",
     ],
