@@ -148,17 +148,13 @@
 }
 /* Navbar Styling */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #121212;
+  background: #333;
   color: white;
-  padding: 15px 30px;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1000;
+  padding: 0.2px; 
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-size: 16px; /* Reduce font size if necessary */
 }
 
 .nav-links {
