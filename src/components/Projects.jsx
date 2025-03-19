@@ -55,14 +55,6 @@ const projectsData = [
       "Enhanced concurrency using epoll-based I/O multiplexing to support up to 50 simultaneous clients."
     ],
     tech: "C++ | Multithreading | Sockets"
-  },
-  {
-    title: "Raft Leader Election Protocol",
-    details: [
-      "Implemented the Raft consensus algorithm for leader election.",
-      "Simulated fault tolerance scenarios and election delays."
-    ],
-    tech: "Go | Raft | Distributed Systems"
   }
 ];
 
